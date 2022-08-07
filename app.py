@@ -82,6 +82,6 @@ def pred(input_text, max_sequence_len, nested_list_len):
 	return dict (zip(seed_list, seed_prob))
 	
 if __name__=='__main__':
-    app.run(debug=True)
+    app.run()
 
 
