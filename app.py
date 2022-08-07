@@ -13,7 +13,7 @@ CORS(app)
 
 model = tf.keras.models.load_model("NextWord_Generation_EDA.h5")
 
-db_connect= DB_Connect(app)
+#db_connect= DB_Connect(app)
 
 # loading
 with open('tokenizer.pickle', 'rb') as handle:
@@ -44,7 +44,7 @@ def predict():
     #print(input_text)
     seeds_out = pred(input_text, int(max_sequence_len), int(nested_list_len))
     seeds_out = sorted(seeds_out.items(), key = lambda kv: kv[1], reverse=True)
-    print("no data found to store in database") if (len(seeds_out) ==0) else db_connect.store("ARJOO",input_text,seeds_out)
+    #print("no data found to store in database") if (len(seeds_out) ==0) else db_connect.store("ARJOO",input_text,seeds_out)
     return jsonify(
                 message="Data fetched successfully.",
                 category="success",
